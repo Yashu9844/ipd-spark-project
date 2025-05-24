@@ -1,12 +1,149 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  const features = [
+    {
+      title: 'Teams',
+      description: 'Join one of our specialized core teams and collaborate with amazing people',
+      icon: '👥',
+      link: '/teams'
+    },
+    {
+      title: 'Projects',
+      description: 'Work on real-world product development projects that make an impact',
+      icon: '🚀',
+      link: '/projects'
+    },
+    {
+      title: 'Events',
+      description: 'Attend workshops, hackathons, and networking sessions',
+      icon: '🎉',
+      link: '/events'
+    },
+    {
+      title: 'Community',
+      description: 'Connect with fellow innovators and build lifelong friendships',
+      icon: '❤️',
+      link: '/contact'
+    }
+  ];
+
+  const stats = [
+    { number: '500+', label: 'Active Members' },
+    { number: '50+', label: 'Projects Completed' },
+    { number: '7', label: 'Core Teams' },
+    { number: '100+', label: 'Events Hosted' }
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="pt-16 min-h-screen flex items-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%236366F1" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center space-y-8">
+            {/* Logo */}
+            <div className="flex justify-center animate-bounce-gentle">
+              <div className="w-24 h-24 bg-gradient-to-r from-ipd-purple to-ipd-blue rounded-3xl flex items-center justify-center shadow-2xl">
+                <span className="text-white font-bold text-4xl">I</span>
+              </div>
+            </div>
+
+            {/* Main Heading */}
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+                <span className="gradient-text">Innovate.</span>{' '}
+                <span className="gradient-text">Build.</span>{' '}
+                <span className="gradient-text">Shine.</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Your creative space for building amazing tech & product experiences
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button asChild className="btn-primary text-lg px-12 py-4 animate-glow">
+                <Link to="/teams">Explore Teams</Link>
+              </Button>
+              <Button asChild variant="outline" className="btn-secondary text-lg px-12 py-4">
+                <Link to="/events">See Events</Link>
+              </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="text-3xl md:text-4xl font-bold gradient-text">{stat.number}</div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-6 mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold gradient-text">About IPD Club</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We're a dynamic community of students passionate about innovation and product development. 
+              From ideation to implementation, we bridge the gap between creativity and technology.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <Card key={index} className="glass-card hover-lift group cursor-pointer animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
+                <Link to={feature.link}>
+                  <CardHeader className="text-center">
+                    <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {feature.icon}
+                    </div>
+                    <CardTitle className="text-xl font-semibold text-gray-800">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-center text-gray-600">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
+                </Link>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Join Us CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-ipd-purple to-ipd-blue">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              Ready to Join the Innovation?
+            </h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              We welcome students from all branches! Come be part of something amazing.
+            </p>
+            <Button asChild className="bg-white text-ipd-purple hover:bg-gray-100 text-lg px-12 py-4 font-semibold">
+              <Link to="/join">Join IPD Club</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
