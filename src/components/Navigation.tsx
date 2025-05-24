@@ -23,10 +23,12 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-ipd-purple to-ipd-blue rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">I</span>
-            </div>
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/b09ae5cf-190e-4c18-b2f8-aca5496c2aed.png" 
+              alt="IPD Club" 
+              className="w-10 h-10 object-contain"
+            />
             <span className="font-bold text-xl gradient-text">IPD Club</span>
           </Link>
 
@@ -38,9 +40,10 @@ const Navigation = () => {
                 to={item.path}
                 className={`font-medium transition-colors duration-200 ${
                   isActive(item.path)
-                    ? 'text-ipd-purple'
-                    : 'text-gray-700 hover:text-ipd-purple'
+                    ? 'gradient-text'
+                    : 'hover:text-white/80'
                 }`}
+                style={{ color: isActive(item.path) ? undefined : 'var(--ipd-text)' }}
               >
                 {item.name}
               </Link>
@@ -54,7 +57,8 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-ipd-purple transition-colors"
+              className="transition-colors"
+              style={{ color: 'var(--ipd-text)' }}
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isOpen ? (
@@ -77,9 +81,10 @@ const Navigation = () => {
                   to={item.path}
                   className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
                     isActive(item.path)
-                      ? 'text-ipd-purple'
-                      : 'text-gray-700 hover:text-ipd-purple'
+                      ? 'gradient-text'
+                      : 'hover:text-white/80'
                   }`}
+                  style={{ color: isActive(item.path) ? undefined : 'var(--ipd-text)' }}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

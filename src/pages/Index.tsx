@@ -41,33 +41,35 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ background: 'var(--ipd-navy)' }}>
       <Navigation />
       
       {/* Hero Section */}
       <section className="pt-16 min-h-screen flex items-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"></div>
-        <div className="absolute inset-0 opacity-40" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236366F1' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        <div className="absolute inset-0 gradient-bg opacity-20"></div>
+        <div className="absolute inset-0 opacity-30" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300C9FF' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center space-y-8">
-            {/* Logo */}
+            {/* Official IPD Logo */}
             <div className="flex justify-center animate-bounce-gentle">
-              <div className="w-24 h-24 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-3xl flex items-center justify-center shadow-2xl">
-                <span className="text-white font-bold text-4xl">I</span>
-              </div>
+              <img 
+                src="/lovable-uploads/b09ae5cf-190e-4c18-b2f8-aca5496c2aed.png" 
+                alt="IPD Club - Integrated Product Development" 
+                className="w-32 h-32 object-contain animate-glow"
+              />
             </div>
 
             {/* Main Heading */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight" style={{ color: 'var(--ipd-text)' }}>
                 <span className="gradient-text">Innovate.</span>{' '}
                 <span className="gradient-text">Build.</span>{' '}
                 <span className="gradient-text">Shine.</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>
                 Your creative space for building amazing tech & product experiences
               </p>
             </div>
@@ -87,7 +89,7 @@ const Index = () => {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                   <div className="text-3xl md:text-4xl font-bold gradient-text">{stat.number}</div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                  <div className="font-medium" style={{ color: 'rgba(249, 250, 251, 0.7)' }}>{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -96,11 +98,11 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6 mb-16">
             <h2 className="text-4xl md:text-5xl font-bold gradient-text">About IPD Club</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>
               We're a dynamic community of students passionate about innovation and product development. 
               From ideation to implementation, we bridge the gap between creativity and technology.
             </p>
@@ -114,10 +116,10 @@ const Index = () => {
                     <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                       {feature.icon}
                     </div>
-                    <CardTitle className="text-xl font-semibold text-gray-800">{feature.title}</CardTitle>
+                    <CardTitle className="text-xl font-semibold" style={{ color: 'var(--ipd-text)' }}>{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-center text-gray-600">
+                    <CardDescription className="text-center" style={{ color: 'rgba(249, 250, 251, 0.7)' }}>
                       {feature.description}
                     </CardDescription>
                   </CardContent>
@@ -129,16 +131,16 @@ const Index = () => {
       </section>
 
       {/* Join Us CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-500 to-blue-500">
+      <section className="py-20 gradient-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-white">
               Ready to Join the Innovation?
             </h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
               We welcome students from all branches! Come be part of something amazing.
             </p>
-            <Button asChild className="bg-white text-indigo-600 hover:bg-gray-100 text-lg px-12 py-4 font-semibold">
+            <Button asChild className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 text-lg px-12 py-4 font-semibold border border-white/30">
               <Link to="/join">Join IPD Club</Link>
             </Button>
           </div>

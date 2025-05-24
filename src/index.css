@@ -44,9 +44,13 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Custom IPD Club colors */
-    --ipd-purple: 99 102 241;
-    --ipd-blue: 59 130 246;
+    /* IPD Club Official Branding Colors */
+    --ipd-navy: #0A0F2C;
+    --ipd-cyan: #00C9FF;
+    --ipd-purple: #6C63FF;
+    --ipd-pink: #FF61D2;
+    --ipd-text: #F9FAFB;
+    --ipd-glass: rgba(255, 255, 255, 0.05);
   }
 
   .dark {
@@ -88,12 +92,16 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Poppins', sans-serif;
+    background: var(--ipd-navy);
+    color: var(--ipd-text);
   }
 }
 
 @layer components {
   .glass-card {
-    @apply backdrop-blur-md bg-white/80 border border-white/20 shadow-lg;
+    @apply backdrop-blur-md border shadow-lg;
+    background: var(--ipd-glass);
+    border-color: rgba(255, 255, 255, 0.1);
   }
   
   .glass-card-dark {
@@ -101,11 +109,11 @@
   }
   
   .gradient-bg {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #01C5FC, #6C63FF, #FF61F6);
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, rgb(var(--ipd-purple)), rgb(var(--ipd-blue)));
+    background: linear-gradient(135deg, #01C5FC, #6C63FF, #FF61F6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -116,11 +124,19 @@
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    background: linear-gradient(135deg, #01C5FC, #6C63FF, #FF61F6);
+    @apply text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg;
   }
   
   .btn-secondary {
-    @apply bg-white/20 backdrop-blur-sm text-gray-700 font-semibold py-3 px-8 rounded-full border border-white/30 transition-all duration-300 hover:bg-white/30 hover:scale-105;
+    background: var(--ipd-glass);
+    @apply backdrop-blur-sm font-semibold py-3 px-8 rounded-full border transition-all duration-300 hover:scale-105;
+    color: var(--ipd-text);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .animate-fade-in {
@@ -158,9 +174,9 @@
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 20px rgba(1, 197, 252, 0.3);
   }
   to {
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 30px rgba(1, 197, 252, 0.5);
   }
 }

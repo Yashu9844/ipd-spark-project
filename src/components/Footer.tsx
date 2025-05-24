@@ -3,31 +3,33 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+    <footer className="gradient-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Club Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-ipd-purple to-ipd-blue rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">I</span>
-              </div>
-              <span className="font-bold text-lg">IPD Club</span>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/lovable-uploads/b09ae5cf-190e-4c18-b2f8-aca5496c2aed.png" 
+                alt="IPD Club" 
+                className="w-8 h-8 object-contain"
+              />
+              <span className="font-bold text-lg text-white">IPD Club</span>
             </div>
-            <p className="text-gray-300 text-sm">
+            <p className="text-white/80 text-sm">
               Your creative space for building amazing tech & product experiences.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4 text-white">Quick Links</h3>
             <ul className="space-y-2">
               {['Teams', 'Events', 'Projects', 'Gallery'].map((link) => (
                 <li key={link}>
                   <Link
                     to={`/${link.toLowerCase()}`}
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                    className="text-white/80 hover:text-white transition-colors duration-200"
                   >
                     {link}
                   </Link>
@@ -38,8 +40,8 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact</h3>
-            <ul className="space-y-2 text-gray-300">
+            <h3 className="font-semibold text-lg mb-4 text-white">Contact</h3>
+            <ul className="space-y-2 text-white/80">
               <li>📧 ipd.club@university.edu</li>
               <li>📱 +1 (555) 123-4567</li>
               <li>📍 Engineering Building, Room 301</li>
@@ -48,7 +50,7 @@ const Footer = () => {
 
           {/* Social Media */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
+            <h3 className="font-semibold text-lg mb-4 text-white">Follow Us</h3>
             <div className="flex space-x-4">
               {[
                 { name: 'Instagram', icon: '📷' },
@@ -59,7 +61,8 @@ const Footer = () => {
                 <a
                   key={social.name}
                   href="#"
-                  className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-ipd-purple transition-all duration-300 hover:scale-110"
+                  className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  style={{ background: 'var(--ipd-glass)', backdropFilter: 'blur(10px)' }}
                   title={social.name}
                 >
                   <span className="text-lg">{social.icon}</span>
@@ -69,8 +72,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-300">
+        <div className="border-t border-white/20 mt-8 pt-8 text-center">
+          <p className="text-white/80">
             © 2024 IPD Club. Made with ❤️ by the Media Core Team.
           </p>
         </div>
