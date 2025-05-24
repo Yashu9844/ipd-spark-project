@@ -79,15 +79,15 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ background: 'var(--ipd-navy)' }}>
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <section className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <h1 className="text-5xl md:text-6xl font-bold gradient-text">Our Projects</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>
               Discover the innovative projects our teams are working on. From mobile apps to IoT solutions, 
               we're building products that make a real impact on campus and beyond.
             </p>
@@ -96,7 +96,7 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -105,8 +105,8 @@ const Projects = () => {
                   <div className="flex justify-between items-start mb-2">
                     <Badge className={getStatusColor(project.status)}>{project.status}</Badge>
                     <div className="text-right">
-                      <div className="text-sm text-gray-500 mb-1">{project.progress}%</div>
-                      <div className="w-16 bg-gray-200 rounded-full h-2">
+                      <div className="text-sm mb-1" style={{ color: 'rgba(249, 250, 251, 0.7)' }}>{project.progress}%</div>
+                      <div className="w-16 rounded-full h-2" style={{ background: 'var(--ipd-glass)' }}>
                         <div 
                           className={`h-2 rounded-full transition-all duration-500 ${getProgressColor(project.progress)}`}
                           style={{ width: `${project.progress}%` }}
@@ -114,25 +114,25 @@ const Projects = () => {
                       </div>
                     </div>
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-ipd-purple transition-colors">
+                  <CardTitle className="text-xl font-bold group-hover:text-ipd-cyan transition-colors" style={{ color: 'var(--ipd-text)' }}>
                     {project.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-gray-600 leading-relaxed">{project.description}</p>
+                  <p className="leading-relaxed" style={{ color: 'rgba(249, 250, 251, 0.7)' }}>{project.description}</p>
                   
                   <div className="space-y-3">
                     <div>
-                      <span className="text-sm font-medium text-gray-700">Core Team: </span>
-                      <span className="text-sm font-semibold text-ipd-purple">{project.coreTeam}</span>
+                      <span className="text-sm font-medium" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>Core Team: </span>
+                      <span className="text-sm font-semibold text-ipd-cyan">{project.coreTeam}</span>
                     </div>
                     
                     <div>
-                      <span className="text-sm font-medium text-gray-700 block mb-2">Key Features:</span>
-                      <ul className="text-sm text-gray-600 space-y-1">
+                      <span className="text-sm font-medium block mb-2" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>Key Features:</span>
+                      <ul className="text-sm space-y-1" style={{ color: 'rgba(249, 250, 251, 0.7)' }}>
                         {project.features.map((feature, idx) => (
                           <li key={idx} className="flex items-center space-x-2">
-                            <span className="w-1.5 h-1.5 bg-ipd-purple rounded-full"></span>
+                            <span className="w-1.5 h-1.5 bg-ipd-cyan rounded-full"></span>
                             <span>{feature}</span>
                           </li>
                         ))}
@@ -141,7 +141,7 @@ const Projects = () => {
                     
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs">
+                        <Badge key={idx} variant="outline" className="text-xs border-ipd-cyan/30" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>
                           {tag}
                         </Badge>
                       ))}
@@ -155,11 +155,11 @@ const Projects = () => {
       </section>
 
       {/* Project Stats */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold gradient-text mb-4">Project Impact</h2>
-            <p className="text-lg text-gray-600">Our projects are making a real difference in the community</p>
+            <p className="text-lg" style={{ color: 'rgba(249, 250, 251, 0.7)' }}>Our projects are making a real difference in the community</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -173,7 +173,7 @@ const Projects = () => {
                 <CardContent className="p-6">
                   <div className="text-4xl mb-4">{stat.icon}</div>
                   <div className="text-3xl font-bold gradient-text mb-2">{stat.number}</div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                  <div className="font-medium" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>{stat.label}</div>
                 </CardContent>
               </Card>
             ))}
@@ -182,17 +182,17 @@ const Projects = () => {
       </section>
 
       {/* Get Involved CTA */}
-      <section className="py-20 bg-gradient-to-r from-ipd-purple to-ipd-blue">
+      <section className="py-20 gradient-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-white">
               Want to Build Something Amazing?
             </h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
               Join one of our project teams and turn your ideas into reality. We're always looking for passionate builders!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-ipd-purple hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105">
+              <button className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 border border-white/30">
                 Propose a Project
               </button>
               <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-ipd-purple font-semibold py-3 px-8 rounded-full transition-all duration-300">

@@ -64,19 +64,19 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ background: 'var(--ipd-navy)' }}>
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <section className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <h1 className="text-5xl md:text-6xl font-bold gradient-text">Gallery</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>
               Relive the amazing moments from our events, workshops, and community gatherings. 
               Every photo tells a story of innovation, collaboration, and fun!
             </p>
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-400 to-purple-500 text-white px-6 py-3 rounded-full font-semibold">
+            <div className="inline-flex items-center space-x-2 gradient-bg text-white px-6 py-3 rounded-full font-semibold">
               <span>📸</span>
               <span>Captured by our talented Media Core team</span>
               <span>✨</span>
@@ -86,13 +86,18 @@ const Gallery = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {eventCategories.map((category, index) => (
               <button
                 key={index}
-                className="px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-gray-100 text-gray-700 hover:bg-gradient-to-r hover:from-ipd-purple hover:to-ipd-blue hover:text-white"
+                className="px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                style={{ 
+                  background: 'var(--ipd-glass)', 
+                  color: 'var(--ipd-text)', 
+                  border: '1px solid rgba(255, 255, 255, 0.2)' 
+                }}
               >
                 {category.name}
               </button>
@@ -102,7 +107,7 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-12 bg-white">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
@@ -138,7 +143,7 @@ const Gallery = () => {
       </section>
 
       {/* Media Core Shoutout */}
-      <section className="py-20 bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500">
+      <section className="py-20 gradient-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <div className="text-6xl mb-6">📸</div>

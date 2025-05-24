@@ -89,15 +89,15 @@ const Events = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ background: 'var(--ipd-navy)' }}>
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <section className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <h1 className="text-5xl md:text-6xl font-bold gradient-text">Events</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>
               From workshops to hackathons, we host events that inspire learning, collaboration, and innovation. Join us and be part of something amazing!
             </p>
           </div>
@@ -105,50 +105,50 @@ const Events = () => {
       </section>
 
       {/* Featured Event */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold gradient-text mb-4">Featured Event</h2>
-            <p className="text-lg text-gray-600">Don't miss our biggest event of the season!</p>
+            <p className="text-lg" style={{ color: 'rgba(249, 250, 251, 0.7)' }}>Don't miss our biggest event of the season!</p>
           </div>
 
           <Card className="glass-card max-w-4xl mx-auto animate-glow">
             <CardHeader className="text-center space-y-4">
               <div className="flex justify-center">
-                <Badge className="bg-gradient-to-r from-ipd-purple to-ipd-blue text-white px-4 py-2 text-sm font-semibold">
+                <Badge className="gradient-bg text-white px-4 py-2 text-sm font-semibold">
                   FEATURED EVENT
                 </Badge>
               </div>
-              <CardTitle className="text-3xl md:text-4xl font-bold text-gray-800">
+              <CardTitle className="text-3xl md:text-4xl font-bold" style={{ color: 'var(--ipd-text)' }}>
                 {featuredEvent.title}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
+                <div className="text-center p-4 rounded-lg" style={{ background: 'var(--ipd-glass)' }}>
                   <div className="text-2xl mb-2">📅</div>
-                  <div className="font-semibold text-gray-800">{featuredEvent.date}</div>
+                  <div className="font-semibold" style={{ color: 'var(--ipd-text)' }}>{featuredEvent.date}</div>
                 </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
+                <div className="text-center p-4 rounded-lg" style={{ background: 'var(--ipd-glass)' }}>
                   <div className="text-2xl mb-2">⏰</div>
-                  <div className="font-semibold text-gray-800">{featuredEvent.time}</div>
+                  <div className="font-semibold" style={{ color: 'var(--ipd-text)' }}>{featuredEvent.time}</div>
                 </div>
-                <div className="text-center p-4 bg-pink-50 rounded-lg">
+                <div className="text-center p-4 rounded-lg" style={{ background: 'var(--ipd-glass)' }}>
                   <div className="text-2xl mb-2">📍</div>
-                  <div className="font-semibold text-gray-800">{featuredEvent.venue}</div>
+                  <div className="font-semibold" style={{ color: 'var(--ipd-text)' }}>{featuredEvent.venue}</div>
                 </div>
               </div>
               
-              <p className="text-lg text-gray-600 leading-relaxed text-center">
+              <p className="text-lg leading-relaxed text-center" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>
                 {featuredEvent.description}
               </p>
 
               <div className="space-y-3">
-                <h4 className="font-semibold text-lg text-gray-800">Event Highlights:</h4>
+                <h4 className="font-semibold text-lg" style={{ color: 'var(--ipd-text)' }}>Event Highlights:</h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {featuredEvent.highlights.map((highlight, index) => (
-                    <div key={index} className="text-center p-3 bg-gradient-to-r from-ipd-purple/10 to-ipd-blue/10 rounded-lg">
-                      <div className="font-medium text-gray-800">{highlight}</div>
+                    <div key={index} className="text-center p-3 rounded-lg" style={{ background: 'var(--ipd-glass)' }}>
+                      <div className="font-medium" style={{ color: 'var(--ipd-text)' }}>{highlight}</div>
                     </div>
                   ))}
                 </div>
@@ -165,11 +165,11 @@ const Events = () => {
       </section>
 
       {/* Upcoming Events */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold gradient-text mb-4">Upcoming Events</h2>
-            <p className="text-lg text-gray-600">Mark your calendars for these exciting upcoming events!</p>
+            <p className="text-lg" style={{ color: 'rgba(249, 250, 251, 0.7)' }}>Mark your calendars for these exciting upcoming events!</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -180,21 +180,21 @@ const Events = () => {
                     <Badge className={getTypeColor(event.type)}>{event.type}</Badge>
                     <Badge className={getStatusColor(event.status)}>{event.status}</Badge>
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-800">{event.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold" style={{ color: 'var(--ipd-text)' }}>{event.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="space-y-2">
                     <div className="flex items-center space-x-2">
                       <span className="text-lg">📅</span>
-                      <span className="font-medium">{event.date}</span>
+                      <span className="font-medium" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>{event.date}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <span className="text-lg">⏰</span>
-                      <span className="font-medium">{event.time}</span>
+                      <span className="font-medium" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>{event.time}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <span className="text-lg">📍</span>
-                      <span className="font-medium">{event.venue}</span>
+                      <span className="font-medium" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>{event.venue}</span>
                     </div>
                   </div>
                   <button className="w-full btn-secondary mt-4">
@@ -208,11 +208,11 @@ const Events = () => {
       </section>
 
       {/* Past Events */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold gradient-text mb-4">Past Events</h2>
-            <p className="text-lg text-gray-600">Check out some of our recent successful events!</p>
+            <p className="text-lg" style={{ color: 'rgba(249, 250, 251, 0.7)' }}>Check out some of our recent successful events!</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -221,14 +221,14 @@ const Events = () => {
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">{event.title}</h3>
-                      <p className="text-gray-600">{event.date}</p>
+                      <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--ipd-text)' }}>{event.title}</h3>
+                      <p style={{ color: 'rgba(249, 250, 251, 0.7)' }}>{event.date}</p>
                     </div>
                     <Badge className={getTypeColor(event.type)}>{event.type}</Badge>
                   </div>
                   <div className="flex items-center space-x-2">
                     <span className="text-lg">👥</span>
-                    <span className="font-medium text-gray-700">{event.participants} participants</span>
+                    <span className="font-medium" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>{event.participants} participants</span>
                   </div>
                 </CardContent>
               </Card>
