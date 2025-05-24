@@ -64,15 +64,15 @@ const Teams = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ background: 'var(--ipd-navy)' }}>
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <section className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <h1 className="text-5xl md:text-6xl font-bold gradient-text">Our Teams</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>
               Meet the amazing core teams that make IPD Club the innovative community it is. 
               Each team brings unique skills and perspectives to our projects.
             </p>
@@ -81,7 +81,7 @@ const Teams = () => {
       </section>
 
       {/* Teams Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teams.map((team, index) => (
@@ -90,18 +90,18 @@ const Teams = () => {
                   <div className={`w-20 h-20 mx-auto bg-gradient-to-r ${team.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     <span className="text-3xl">{team.emoji}</span>
                   </div>
-                  <CardTitle className="text-2xl font-bold text-gray-800">{team.name}</CardTitle>
+                  <CardTitle className="text-2xl font-bold" style={{ color: 'var(--ipd-text)' }}>{team.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center space-y-4">
-                  <p className="text-gray-600 leading-relaxed">{team.description}</p>
+                  <p className="leading-relaxed" style={{ color: 'rgba(249, 250, 251, 0.7)' }}>{team.description}</p>
                   <div className="space-y-2">
-                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="font-medium text-gray-700">Lead:</span>
-                      <span className="font-semibold text-ipd-purple">{team.lead}</span>
+                    <div className="flex justify-between items-center p-3 rounded-lg" style={{ background: 'var(--ipd-glass)' }}>
+                      <span className="font-medium" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>Lead:</span>
+                      <span className="font-semibold gradient-text">{team.lead}</span>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="font-medium text-gray-700">Co-Lead:</span>
-                      <span className="font-semibold text-ipd-blue">{team.coLead}</span>
+                    <div className="flex justify-between items-center p-3 rounded-lg" style={{ background: 'var(--ipd-glass)' }}>
+                      <span className="font-medium" style={{ color: 'rgba(249, 250, 251, 0.8)' }}>Co-Lead:</span>
+                      <span className="font-semibold gradient-text">{team.coLead}</span>
                     </div>
                   </div>
                 </CardContent>
@@ -112,17 +112,17 @@ const Teams = () => {
       </section>
 
       {/* Join a Team CTA */}
-      <section className="py-20 bg-gradient-to-r from-ipd-purple to-ipd-blue">
+      <section className="py-20 gradient-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-white">
               Find Your Team
             </h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
               Interested in joining one of our core teams? Each team welcomes new members who are passionate and eager to learn.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-ipd-purple hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105">
+              <button className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 border border-white/30">
                 Apply to Join
               </button>
               <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-ipd-purple font-semibold py-3 px-8 rounded-full transition-all duration-300">

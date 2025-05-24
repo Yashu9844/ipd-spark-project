@@ -25,7 +25,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/b09ae5cf-190e-4c18-b2f8-aca5496c2aed.png" 
+              src="/lovable-uploads/c764919b-6594-4120-90eb-81a5a3c78c65.png" 
               alt="IPD Club" 
               className="w-10 h-10 object-contain"
             />
@@ -41,9 +41,8 @@ const Navigation = () => {
                 className={`font-medium transition-colors duration-200 ${
                   isActive(item.path)
                     ? 'gradient-text'
-                    : 'hover:text-white/80'
+                    : 'text-white/90 hover:text-white'
                 }`}
-                style={{ color: isActive(item.path) ? undefined : 'var(--ipd-text)' }}
               >
                 {item.name}
               </Link>
@@ -57,8 +56,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="transition-colors"
-              style={{ color: 'var(--ipd-text)' }}
+              className="text-white transition-colors"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isOpen ? (
@@ -82,9 +80,8 @@ const Navigation = () => {
                   className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
                     isActive(item.path)
                       ? 'gradient-text'
-                      : 'hover:text-white/80'
+                      : 'text-white/90 hover:text-white'
                   }`}
-                  style={{ color: isActive(item.path) ? undefined : 'var(--ipd-text)' }}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
